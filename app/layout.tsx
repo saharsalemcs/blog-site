@@ -1,33 +1,35 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
   subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Next Blog Site",
-  description: "A minimal blog app built with Next.js App Router.",
+  title: "My Blog",
+  description: "A simple blog built to learn Next.js",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <div className="min-h-dvh bg-zinc-200 text-zinc-950">
-          <div className="flex flex-col mx-auto min-h-dvh w-full max-w-275 bg-white border-x border-zinc-300">
+        <div className="min-h-dvh bg-canvas text-ink">
+          <div className="flex flex-col mx-auto min-h-dvh w-full max-w-275 bg-paper border-x border-border">
             <Header />
             <main className="flex-1 px-4 py-8 sm:px-6 sm:py-10">
               {children}

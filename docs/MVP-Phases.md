@@ -16,11 +16,11 @@ Stack: Next.js (App Router, TypeScript) + Tailwind CSS + Supabase + React Hook F
 
 ## Phase 1 — Read-Only Foundation (Home + Post Page)
 
-- [ ] Create `lib/supabase/server.ts` (Supabase client for Server Components)
-- [ ] Create `lib/data/posts.ts` with `getAllPosts()` and `getPostById(id)`
-- [ ] Build `app/layout.tsx` (shared header/footer)
-- [ ] Build `app/page.tsx` (Home) — list all posts using `getAllPosts()`
-- [ ] Build `components/PostCard.tsx` for displaying a post preview
+- [x] Create `lib/supabase/server.ts` (Supabase client for Server Components)
+- [x] Create `lib/data/posts.ts` with `getAllPosts()` and `getPostById(id)`
+- [x] Build `app/layout.tsx` (shared header/footer)
+- [x] Build `app/page.tsx` (Home) — list all posts using `getAllPosts()`
+- [x] Build `components/PostCard.tsx` for displaying a post preview
 - [ ] Build `app/posts/[id]/page.tsx` — display a single post using `getPostById()`
 - [ ] Handle "post not found" case (`notFound()`)
 
