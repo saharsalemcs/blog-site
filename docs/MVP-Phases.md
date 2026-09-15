@@ -21,14 +21,14 @@ Stack: Next.js (App Router, TypeScript) + Tailwind CSS + Supabase + React Hook F
 - [x] Build `app/layout.tsx` (shared header/footer)
 - [x] Build `app/page.tsx` (Home) — list all posts using `getAllPosts()`
 - [x] Build `components/PostCard.tsx` for displaying a post preview
-- [ ] Build `app/posts/[id]/page.tsx` — display a single post using `getPostById()`
-- [ ] Handle "post not found" case (`notFound()`)
+- [x] Build `app/posts/[id]/page.tsx` — display a single post using `getPostById()`
+- [x] Handle "post not found" case (`notFound()`)
 
 ## Phase 2 — Zod Schema + Shared Form
 
-- [ ] Create `lib/schemas/post.ts` with the Zod schema (title, description, content)
-- [ ] Infer the TypeScript type from the schema (`z.infer`)
-- [ ] Create `lib/supabase/client.ts` (Supabase client for Client Components, if needed)
+- [x] Create `lib/schemas/post.ts` with the Zod schema (title, description, content)
+- [x] Infer the TypeScript type from the schema (`z.infer`)
+- [x] Create `lib/supabase/client.ts` (Supabase client for Client Components, if needed)
 - [ ] Build `components/PostForm.tsx` ("use client") using `useForm` + `zodResolver`
 - [ ] Design the form to accept `defaultValues` and a `mode` (create/edit) as props
 

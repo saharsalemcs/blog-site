@@ -1,3 +1,4 @@
+import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 
 type PostCardProps = {
@@ -13,12 +14,6 @@ export default function PostCard({
   description,
   createdAt,
 }: PostCardProps) {
-  const formattedDate = new Date(createdAt).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-
   return (
     <article className="border-b border-border py-6 first:pt-0 last:border-b-0">
       <Link href={`/posts/${id}`} className="group">
@@ -26,7 +21,7 @@ export default function PostCard({
           {title}
         </h2>
         {description && <p className="mt-2 text-ink/80">{description}</p>}
-        <p className="mt-3 text-sm text-muted">{formattedDate}</p>
+        <p className="mt-3 text-sm text-muted">{formatDate(createdAt)}</p>
       </Link>
     </article>
   );
