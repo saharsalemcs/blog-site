@@ -46,3 +46,31 @@ export async function createPost(data: PostInput) {
   revalidatePath("/");
   redirect(`/posts/${post.id}`);
 }
+export async function updatePost(id: string, data: PostInput) {
+  const parsed = postSchema.safeParse(data);
+
+  if (!parsed.success) {
+    console.log(parsed.error);
+    console.log(parsed.error.issues);
+    return { error: "Invalid data. Please check the form and try again." };
+  }
+
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("posts")
+    .update({
+      title: parsed.data.title,
+      description: parsed.data.description || null,
+      content: parsed.data.content,
+    })
+    .eq("id", id);
+
+  if (error) {
+    console.error("Error updating post:", error);
+    return { error: "Something went wrong. Please try again." };
+  }
+
+  revalidatePath("/");
+  revalidatePath(`/posts/${id}`);
+  redirect(`/posts/${id}`);
+}

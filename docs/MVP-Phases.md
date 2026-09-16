@@ -45,13 +45,13 @@ Stack: Next.js (App Router, TypeScript) + Tailwind CSS + Supabase + React Hook F
 
 ## Phase 4 — Edit Post (Reuse the Form)
 
-- [ ] Add `updatePost` Server Action in `lib/actions/posts.ts`
-- [ ] Bind/pass the post `id` to the action alongside form data
-- [ ] Validate server-side, update the row in Supabase
-- [ ] Call `revalidatePath` for both the post page and the home page
-- [ ] Build `app/posts/[id]/edit/page.tsx` — fetch the post, pass `defaultValues` to `PostForm`
-- [ ] Confirm `PostForm` correctly switches behavior between create/edit mode
-- [ ] Test the full error path: invalid data → same page, error shown, data preserved
+- [x] Add `updatePost` Server Action in `lib/actions/posts.ts`
+- [x] Bind/pass the post `id` to the action alongside form data
+- [x] Validate server-side, update the row in Supabase
+- [x] Call `revalidatePath` for both the post page and the home page
+- [x] Build `app/posts/[id]/edit/page.tsx` — fetch the post, pass `defaultValues` to `PostForm`
+- [x] Confirm `PostForm` correctly switches behavior between create/edit mode
+- [x] Test the full error path: invalid data → same page, error shown, data preserved
 
 ## Phase 5 — Delete Post
 
