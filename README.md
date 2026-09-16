@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Blog
 
-## Getting Started
+A simple blog built as a **learning project** to practice Next.js hands-on — mainly Server Actions, mutations, and the App Router. This isn't meant to be a polished product; it's a sandbox for understanding how the pieces fit together.
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Next.js (App Router, TypeScript)
+- Tailwind CSS
+- Supabase (Postgres)
+- React Hook Form + Zod
+- Server Actions
+
+## Features
+
+- View all posts (Home page)
+- View a single post
+- Create a post
+- Edit a post
+- Delete a post
+
+## Project Structure
+
+```
+app/            → pages and routes
+components/     → shared UI components
+lib/data/       → read-only Supabase queries
+lib/actions/    → Server Actions (create/update/delete)
+lib/schemas/    → Zod schemas
+lib/supabase/   → Supabase client setup
+supabase/       → SQL migrations
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Notes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project has no authentication — Row Level Security is enabled with public policies for learning purposes only. Not meant for production use as-is.
