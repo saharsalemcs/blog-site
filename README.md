@@ -27,7 +27,6 @@ lib/data/       → read-only Supabase queries
 lib/actions/    → Server Actions (create/update/delete)
 lib/schemas/    → Zod schemas
 lib/supabase/   → Supabase client setup
-supabase/       → SQL migrations
 ```
 
 ## Notes
