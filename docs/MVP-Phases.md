@@ -29,19 +29,19 @@ Stack: Next.js (App Router, TypeScript) + Tailwind CSS + Supabase + React Hook F
 - [x] Create `lib/schemas/post.ts` with the Zod schema (title, description, content)
 - [x] Infer the TypeScript type from the schema (`z.infer`)
 - [x] Create `lib/supabase/client.ts` (Supabase client for Client Components, if needed)
-- [ ] Build `components/PostForm.tsx` ("use client") using `useForm` + `zodResolver`
-- [ ] Design the form to accept `defaultValues` and a `mode` (create/edit) as props
+- [x] Build `components/PostForm.tsx` ("use client") using `useForm` + `zodResolver`
+- [x] Design the form to accept `defaultValues` and a `mode` (create/edit) as props
 
 ## Phase 3 — Create Post (Full Mutation Flow)
 
-- [ ] Create `lib/actions/posts.ts` with `createPost` Server Action (`"use server"`)
-- [ ] Validate input server-side with the same Zod schema
-- [ ] Insert the new post into Supabase
-- [ ] Call `revalidatePath` for the home page
-- [ ] Build `app/posts/new/page.tsx` using `PostForm`
-- [ ] Wire up `PostForm`'s `onSubmit` to call `createPost` manually (not via `action={}`)
-- [ ] Handle success (redirect/`router.push`) and server-side errors (`setError`)
-- [ ] Add `formState.isSubmitting` loading state on the submit button
+- [x] Create `lib/actions/posts.ts` with `createPost` Server Action (`"use server"`)
+- [x] Validate input server-side with the same Zod schema
+- [x] Insert the new post into Supabase
+- [x] Call `revalidatePath` for the home page
+- [x] Build `app/posts/new/page.tsx` using `PostForm`
+- [x] Wire up `PostForm`'s `onSubmit` to call `createPost` manually (not via `action={}`)
+- [x] Handle success (redirect/`router.push`) and server-side errors (`setError`)
+- [x] Add `formState.isSubmitting` loading state on the submit button
 
 ## Phase 4 — Edit Post (Reuse the Form)
 
