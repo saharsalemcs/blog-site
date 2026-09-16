@@ -1,6 +1,8 @@
 import PostForm from "@/components/PostForm";
 import { createPost } from "@/lib/actions/posts";
 
+export const metadata = { title: "New post" };
+
 export default function NewPostPage() {
   return (
     <div>

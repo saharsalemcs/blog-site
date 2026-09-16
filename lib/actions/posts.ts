@@ -20,7 +20,9 @@ export async function createPost(data: PostInput) {
   if (!parsed.success) {
     console.log(parsed.error);
     console.log(parsed.error.issues);
-    return { error: "Invalid data. Please check the form and try again." };
+    return {
+      error: "Invalid data. Please try again.",
+    };
   }
 
   const supabase = await createClient();
@@ -46,6 +48,7 @@ export async function createPost(data: PostInput) {
   revalidatePath("/");
   redirect(`/posts/${post.id}`);
 }
+
 export async function updatePost(id: string, data: PostInput) {
   const parsed = postSchema.safeParse(data);
 

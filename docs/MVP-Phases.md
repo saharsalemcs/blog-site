@@ -21,7 +21,7 @@ Stack: Next.js (App Router, TypeScript) + Tailwind CSS + Supabase + React Hook F
 - [x] Build `app/layout.tsx` (shared header/footer)
 - [x] Build `app/page.tsx` (Home) — list all posts using `getAllPosts()`
 - [x] Build `components/PostCard.tsx` for displaying a post preview
-- [x] Build `app/posts/[id]/page.tsx` — display a single post using `getPostById()`
+- [x] Build `app/posts/[postId]/page.tsx` — display a single post using `getPostById()`
 - [x] Handle "post not found" case (`notFound()`)
 
 ## Phase 2 — Zod Schema + Shared Form
@@ -30,7 +30,8 @@ Stack: Next.js (App Router, TypeScript) + Tailwind CSS + Supabase + React Hook F
 - [x] Infer the TypeScript type from the schema (`z.infer`)
 - [x] Create `lib/supabase/client.ts` (Supabase client for Client Components, if needed)
 - [x] Build `components/PostForm.tsx` ("use client") using `useForm` + `zodResolver`
-- [x] Design the form to accept `defaultValues` and a `mode` (create/edit) as props
+- [x] Extract `components/FormField.tsx` to avoid repeating label/error markup across inputs
+- [x] Design the form to accept `defaultValues`, an `onSubmit` handler, and a `submitLabel` as props (the parent page decides which action to call, not the form)
 
 ## Phase 3 — Create Post (Full Mutation Flow)
 
@@ -49,8 +50,8 @@ Stack: Next.js (App Router, TypeScript) + Tailwind CSS + Supabase + React Hook F
 - [x] Bind/pass the post `id` to the action alongside form data
 - [x] Validate server-side, update the row in Supabase
 - [x] Call `revalidatePath` for both the post page and the home page
-- [x] Build `app/posts/[id]/edit/page.tsx` — fetch the post, pass `defaultValues` to `PostForm`
-- [x] Confirm `PostForm` correctly switches behavior between create/edit mode
+- [x] Build `app/posts/[postId]/edit/page.tsx` — fetch the post, pass `defaultValues` to `PostForm`
+- [x] Wrap `updatePost` in a small inline Server Action (`"use server"`) that closes over `postId`, so `PostForm` can call it as a single-argument `onSubmit`
 - [x] Test the full error path: invalid data → same page, error shown, data preserved
 
 ## Phase 5 — Delete Post
@@ -63,8 +64,13 @@ Stack: Next.js (App Router, TypeScript) + Tailwind CSS + Supabase + React Hook F
 
 ## Phase 6 — Polish & Review
 
-- [ ] Review error handling consistency across all 3 mutations (create/update/delete)
-- [ ] Review loading states across all forms/buttons
+- [x] Review error handling consistency across all 3 mutations (create/update/delete)
+- [x] Surface the first Zod validation issue message instead of a generic error string
+- [x] Add `generateMetadata` to `app/posts/[postId]/page.tsx` for per-post page titles/descriptions
+- [x] Add a title template in the root layout (`app/layout.tsx`) so page titles show as "Post Title — My Blog"
+- [x] Add `app/loading.tsx` for a loading state while Server Components fetch data
+- [x] Add `app/error.tsx` ("use client") as an error boundary with a "Try again" button (`reset`)
+- [x] Review loading states across all forms/buttons
 - [x] Basic styling pass with Tailwind (spacing, typography, responsive check)
-- [ ] Manual test of all 5 features end-to-end
+- [x] Manual test of all 5 features end-to-end
 - [ ] (Optional) Deploy to Vercel

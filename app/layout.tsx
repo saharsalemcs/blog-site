@@ -17,7 +17,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "My Blog",
+  // title: "My Blog",
+  title: {
+    default: "My Blog",
+    template: "%s | My Blog",
+  },
   description: "A simple blog built to learn Next.js",
 };
 
