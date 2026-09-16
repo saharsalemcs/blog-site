@@ -74,3 +74,17 @@ export async function updatePost(id: string, data: PostInput) {
   revalidatePath(`/posts/${id}`);
   redirect(`/posts/${id}`);
 }
+
+export async function deletePost(id: string) {
+  const supabase = await createClient();
+
+  const { error } = await supabase.from("posts").delete().eq("id", id);
+
+  if (error) {
+    console.error("Error deleting post:", error);
+    return { error: "Something went wrong. Please try again." };
+  }
+
+  revalidatePath("/");
+  redirect("/");
+}

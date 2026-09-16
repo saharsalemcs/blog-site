@@ -1,4 +1,5 @@
 import NotFound from "@/app/not-found";
+import DeletePostButton from "@/components/DeletePostButton";
 import { getPostById } from "@/lib/data/posts";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
@@ -18,12 +19,15 @@ export default async function Page({ params }: Props) {
         <h1 className="font-serif text-4xl text-ink">{post.title}</h1>
         <div className="mt-4 flex items-center justify-between">
           <p className="text-sm text-muted">{formatDate(post.created_at)}</p>
-          <Link
-            href={`/posts/${post.id}/edit`}
-            className="text-sm text-accent hover:underline"
-          >
-            Edit
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href={`/posts/${post.id}/edit`}
+              className="text-sm text-accent hover:underline"
+            >
+              Edit
+            </Link>
+            <DeletePostButton postId={post.id} />
+          </div>
         </div>
       </header>
 

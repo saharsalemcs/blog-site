@@ -55,16 +55,16 @@ Stack: Next.js (App Router, TypeScript) + Tailwind CSS + Supabase + React Hook F
 
 ## Phase 5 — Delete Post
 
-- [ ] Add `deletePost` Server Action in `lib/actions/posts.ts`
-- [ ] Call `revalidatePath` after deletion
-- [ ] Build `components/DeletePostButton.tsx` ("use client") with a confirm step
-- [ ] Wire the button to call `deletePost` and redirect/refresh on success
-- [ ] Add the delete button to the post page and/or post cards
+- [x] Add `deletePost` Server Action in `lib/actions/posts.ts`
+- [x] Call `revalidatePath` after deletion
+- [x] Build `components/DeletePostButton.tsx` ("use client") with a confirm step
+- [x] Wire the button to call `deletePost` and redirect/refresh on success
+- [x] Add the delete button to the post page and/or post cards
 
 ## Phase 6 — Polish & Review
 
 - [ ] Review error handling consistency across all 3 mutations (create/update/delete)
 - [ ] Review loading states across all forms/buttons
-- [ ] Basic styling pass with Tailwind (spacing, typography, responsive check)
+- [x] Basic styling pass with Tailwind (spacing, typography, responsive check)
 - [ ] Manual test of all 5 features end-to-end
 - [ ] (Optional) Deploy to Vercel
